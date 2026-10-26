@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // SSE for real-time updates
   initSSE();
+
+  window.addEventListener('languageChanged', () => {
+    populateAdminHeader();
+    reloadAdminData();
+  });
 });
 
 function logoutAdmin(e) {
@@ -40,7 +45,7 @@ function populateAdminHeader() {
   const roleEl = document.getElementById('admin-role-badge');
   const centreEl = document.getElementById('admin-centre-display');
 
-  if (nameEl) nameEl.textContent = a.full_name || 'Admin';
+  if (nameEl) nameEl.textContent = a.full_name || t('admin_title', 'Admin');
   if (roleEl) roleEl.textContent = `Role: ${(a.role || 'operator').toUpperCase()}`;
   if (centreEl) centreEl.textContent = a.centre_name ? `📍 ${a.centre_name}` : '🏢 All Centres (Super Admin)';
 
@@ -129,7 +134,7 @@ function renderDesks(desks) {
   if (!grid) return;
 
   if (!desks.length) {
-    grid.innerHTML = '<div style="color:#94a3b8;font-size:0.85rem;padding:1rem;">No desks configured for this centre</div>';
+    grid.innerHTML = `<div style="color:#94a3b8;font-size:0.85rem;padding:1rem;">No desks configured for this centre</div>`;
     return;
   }
 
@@ -170,7 +175,7 @@ function renderQueueTable(tbodyId, queue) {
         </td>
         <td style="font-size:0.85rem;">${b.crop_name || '--'}</td>
         <td style="font-size:0.82rem;">${b.time_slot || '--'}</td>
-        <td><span style="background:${statusColor};color:#0f172a;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:0.3rem;text-transform:uppercase;">${(b.booking_status || '').replace('_', ' ')}</span></td>
+        <td><span style="background:${statusColor};color:#0f172a;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:0.3rem;text-transform:uppercase;">${t('status_' + b.booking_status, (b.booking_status || '').replace('_', ' '))}</span></td>
         <td style="font-size:0.82rem;">
           ${b.desk_name ? `<span style="color:#d97706;font-weight:600;">${b.desk_name}</span>` : (b.booking_status === 'checked_in' ? `#${idx + 1} in line` : '--')}
         </td>
@@ -202,7 +207,7 @@ function renderFullQueueTable(tbodyId, queue) {
       <td>${b.crop_name || '--'}</td>
       <td>${b.estimated_quantity_quintals || '--'} Qtl</td>
       <td>${b.time_slot || '--'}</td>
-      <td><span class="booking-status-pill status-${b.booking_status}">${(b.booking_status || '').replace('_', ' ')}</span></td>
+      <td><span class="booking-status-pill status-${b.booking_status}">${t('status_' + b.booking_status, (b.booking_status || '').replace('_', ' '))}</span></td>
       <td style="font-size:0.8rem;">${b.check_in_time ? new Date(b.check_in_time).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '--'}</td>
       <td>
         <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">

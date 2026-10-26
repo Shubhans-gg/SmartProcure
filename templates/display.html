@@ -187,7 +187,7 @@
       </div>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 1.5rem;">
+    <div style="display: flex; align-items: center; gap: 1rem;">
       <select id="display-centre-select" class="form-control" style="background: #1e293b; color: white; border-color: #334155; width: auto; font-size: 1rem; font-weight: 700;">
         {% for c in centres %}
           <option value="{{ c.id }}" {% if loop.first %}selected{% endif %}>
@@ -196,17 +196,21 @@
         {% endfor %}
       </select>
 
+      <button id="lang-toggle-btn" class="lang-btn" title="Toggle Language" aria-label="Toggle Language" onclick="toggleLanguage()" style="padding: 0.4rem 0.8rem; font-size: 0.9rem; background: #1e293b; border: 1px solid #334155; color: white; border-radius: 0.5rem; cursor: pointer;">
+        🇮🇳 <span>हिंदी</span>
+      </button>
+
       <div class="display-clock" id="display-live-clock">--:--:--</div>
     </div>
   </div>
 
   <div class="display-main-content">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <h2 style="font-size: 1.4rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em;">
+      <h2 style="font-size: 1.4rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em;" data-i18n="active_counters_heading">
         Active Counter Desks • Currently Serving
       </h2>
       <div style="display: flex; align-items: center; gap: 0.5rem; color: #34d399; font-weight: 700;">
-        <span class="live-pulse"></span> LIVE BROADCAST
+        <span class="live-pulse"></span> <span data-i18n="live_broadcast">LIVE BROADCAST</span>
       </div>
     </div>
 
@@ -218,7 +222,7 @@
 
   <!-- Bottom Waiting Queue Ticker -->
   <div class="display-bottom-ticker-bar">
-    <div class="ticker-label">⏳ Next in Queue:</div>
+    <div class="ticker-label" data-i18n="next_in_queue_label">⏳ Next in Queue:</div>
     <div id="display-waiting-ticker" class="ticker-chips-row">
       <!-- Populated by JS -->
     </div>

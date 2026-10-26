@@ -35,6 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
       switchTab(hash);
     }
   });
+
+  window.addEventListener('languageChanged', () => {
+    loadSummaryStats();
+    loadMyBookings();
+    loadPaymentStatus();
+    updateMSPPreview();
+    const trackInput = document.getElementById('track-token-input');
+    if (trackInput && trackInput.value.trim()) {
+      trackToken();
+    }
+  });
 });
 
 function logoutFarmer(e) {
@@ -349,8 +360,8 @@ async function loadMyBookings() {
     if (!data.success || !data.bookings.length) {
       container.innerHTML = `<div class="empty-state">
         <span class="empty-state-icon">🎫</span>
-        <div class="empty-state-title">No Bookings Yet</div>
-        <div class="empty-state-desc">Book your first procurement slot to get started!</div>
+        <div class="empty-state-title">${t('no_bookings_title', 'No Bookings Yet')}</div>
+        <div class="empty-state-desc">${t('no_bookings_desc', 'Book your first procurement slot to get started!')}</div>
       </div>`;
       return;
     }
@@ -365,42 +376,42 @@ async function loadMyBookings() {
         <div class="booking-card-top">
           <div class="booking-token-chip">${b.token_number}</div>
           <div class="booking-status-pill ${statusColors[b.booking_status] || 'status-booked'}">
-            ${(b.booking_status || 'booked').replace('_', ' ').toUpperCase()}
+            ${t('status_' + (b.booking_status || 'booked'), (b.booking_status || 'booked').replace('_', ' ').toUpperCase())}
           </div>
         </div>
         <div class="booking-card-details">
           <div class="booking-detail-item">
-            <div class="label">📅 Date</div>
-            <div class="value">${new Date(b.booking_date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
+            <div class="label">📅 ${t('preview_date', 'Date')}</div>
+            <div class="value">${new Date(b.booking_date).toLocaleDateString((typeof currentLang !== 'undefined' && currentLang === 'hi') ? 'hi-IN' : 'en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
           </div>
           <div class="booking-detail-item">
-            <div class="label">⏰ Time Slot</div>
+            <div class="label">⏰ ${t('preview_time_slot', 'Time Slot')}</div>
             <div class="value">${b.time_slot}</div>
           </div>
           <div class="booking-detail-item">
-            <div class="label">🌾 Crop</div>
+            <div class="label">🌾 ${t('preview_crop', 'Crop')}</div>
             <div class="value">${b.crop_name} (${b.crop_hindi})</div>
           </div>
           <div class="booking-detail-item">
-            <div class="label">🏢 Centre</div>
+            <div class="label">🏢 ${t('preview_centre', 'Centre')}</div>
             <div class="value" style="font-size:0.76rem;">${b.centre_name}</div>
           </div>
           ${b.receipt_number ? `
           <div class="booking-detail-item">
-            <div class="label">📄 Receipt</div>
+            <div class="label">📄 ${t('receipt_label', 'Receipt')}</div>
             <div class="value"><a href="/receipt/${b.receipt_number}" target="_blank" style="color:#16a34a;font-weight:700;">${b.receipt_number}</a></div>
           </div>
           <div class="booking-detail-item">
-            <div class="label">💰 Amount</div>
+            <div class="label">💰 ${t('amount_label', 'Amount')}</div>
             <div class="value" style="color:#16a34a;">₹${(b.total_payable_amount || 0).toLocaleString('en-IN')}</div>
           </div>
           ` : ''}
         </div>
         <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-          <button class="btn btn-secondary btn-sm" onclick="quickTrack('${b.token_number}')">📍 Track</button>
+          <button class="btn btn-secondary btn-sm" onclick="quickTrack('${b.token_number}')">📍 ${t('track_btn', 'Track')}</button>
           ${b.booking_status === 'booked' ? `
-            <button class="btn btn-primary btn-sm" onclick="checkInToken('${b.id}')">✅ Check-In at Mandi</button>
-            <button class="btn btn-danger btn-sm" onclick="cancelBooking('${b.id}', '${b.token_number}')" style="background:#ef4444;color:white;border:none;border-radius:0.4rem;padding:0.4rem 0.75rem;font-size:0.75rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:0.3rem;">🗑️ Delete / Cancel</button>
+            <button class="btn btn-primary btn-sm" onclick="checkInToken('${b.id}')">✅ ${t('checkin_btn', 'Check-In at Mandi')}</button>
+            <button class="btn btn-danger btn-sm" onclick="cancelBooking('${b.id}', '${b.token_number}')" style="background:#ef4444;color:white;border:none;border-radius:0.4rem;padding:0.4rem 0.75rem;font-size:0.75rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:0.3rem;">🗑️ ${t('cancel_btn', 'Delete / Cancel')}</button>
           ` : ''}
         </div>
       </div>

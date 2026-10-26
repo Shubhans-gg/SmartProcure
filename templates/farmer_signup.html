@@ -59,28 +59,28 @@
     <div class="auth-card" id="reg-form-card">
       <div class="auth-card-header">
         <span class="auth-card-icon">🧑‍🌾</span>
-        <div class="auth-card-title">Register as Farmer</div>
+        <div class="auth-card-title" data-i18n="reg_farmer_header">Register as Farmer</div>
       </div>
 
       <form id="farmer-reg-form" onsubmit="submitRegistration(event)">
         
         <!-- 1. Personal Details (Moved to Top) -->
-        <div class="section-divider-label">👤 Personal Details</div>
+        <div class="section-divider-label" data-i18n="personal_details_sec">👤 Personal Details</div>
 
         <div class="signup-grid-2">
           <div class="form-group">
-            <label class="form-label">Full Name *</label>
-            <input type="text" id="reg-fullname" class="form-control" placeholder="Full Name" required>
+            <label class="form-label" data-i18n="full_name_label">Full Name *</label>
+            <input type="text" id="reg-fullname" class="form-control" placeholder="Full Name" data-i18n-placeholder="full_name_ph" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Aadhaar Number (12 Digits) *</label>
-            <input type="text" id="reg-aadhaar" class="form-control" placeholder="12-digit Aadhaar Number" maxlength="12" minlength="12" pattern="\d{12}" inputmode="numeric" required>
+            <label class="form-label" data-i18n="aadhaar_label">Aadhaar Number (12 Digits) *</label>
+            <input type="text" id="reg-aadhaar" class="form-control" placeholder="12-digit Aadhaar Number" data-i18n-placeholder="aadhaar_ph" maxlength="12" minlength="12" pattern="\d{12}" inputmode="numeric" required>
           </div>
         </div>
 
         <div class="signup-grid-3">
           <div class="form-group">
-            <label class="form-label">State / UT *</label>
+            <label class="form-label" data-i18n="state_label">State / UT *</label>
             <select id="reg-state" class="form-control" required>
               <option value="" disabled selected>Select State / UT *</option>
               <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -122,12 +122,12 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">District *</label>
-            <input type="text" id="reg-district" class="form-control" placeholder="District" required>
+            <label class="form-label" data-i18n="district_label">District *</label>
+            <input type="text" id="reg-district" class="form-control" placeholder="District" data-i18n-placeholder="district_ph" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Village / Town *</label>
-            <input type="text" id="reg-village" class="form-control" placeholder="Village / Town" required>
+            <label class="form-label" data-i18n="village_label">Village / Town *</label>
+            <input type="text" id="reg-village" class="form-control" placeholder="Village / Town" data-i18n-placeholder="village_ph" required>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
 
         <div class="signup-grid-2">
           <div class="form-group">
-            <label class="form-label">Mobile Number *</label>
+            <label class="form-label" data-i18n="mobile_label">Mobile Number *</label>
             <div class="otp-input-group">
               <span class="country-code">+91</span>
               <input type="tel" id="reg-phone-input" class="form-control" placeholder="10-digit Mobile Number" maxlength="10" minlength="10" inputmode="numeric" required>
@@ -160,23 +160,23 @@
         </div>
 
         <!-- 3. Bank Details for DBT Payment -->
-        <div class="section-divider-label">💳 Bank Details for DBT Payment</div>
+        <div class="section-divider-label" data-i18n="bank_details_sec">💳 Bank Details for DBT Payment</div>
 
         <div class="signup-grid-2">
           <div class="form-group">
-            <label class="form-label">Bank Account Number *</label>
-            <input type="text" id="reg-bank-acc" class="form-control" placeholder="Bank Account Number" required>
+            <label class="form-label" data-i18n="account_num_label">Bank Account Number *</label>
+            <input type="text" id="reg-bank-acc" class="form-control" placeholder="Bank Account Number" data-i18n-placeholder="account_num_ph" required>
           </div>
           <div class="form-group">
-            <label class="form-label">IFSC Code *</label>
-            <input type="text" id="reg-ifsc" class="form-control" placeholder="IFSC Code" style="text-transform:uppercase;" required>
+            <label class="form-label" data-i18n="ifsc_label">IFSC Code *</label>
+            <input type="text" id="reg-ifsc" class="form-control" placeholder="IFSC Code" data-i18n-placeholder="ifsc_ph" style="text-transform:uppercase;" required>
           </div>
         </div>
 
         <div class="signup-grid-2">
           <div class="form-group">
-            <label class="form-label">Bank Name *</label>
-            <input type="text" id="reg-bank-name" class="form-control" placeholder="Bank Name" required>
+            <label class="form-label" data-i18n="bank_name_label">Bank Name *</label>
+            <input type="text" id="reg-bank-name" class="form-control" placeholder="Bank Name" data-i18n-placeholder="bank_name_ph" required>
           </div>
           <div class="form-group">
             <label class="form-label">UPI ID <span style="color:#94a3b8; font-weight: normal;">(Optional)</span></label>

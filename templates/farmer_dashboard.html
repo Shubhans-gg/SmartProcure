@@ -62,20 +62,20 @@
   <!-- Tab Navigation -->
   <div class="dashboard-tabs-nav">
     <div class="tabs-nav-inner">
-      <button class="dashboard-tab-btn active" onclick="switchTab('book')" id="tab-btn-book">
+      <button class="dashboard-tab-btn active" onclick="switchTab('book')" id="tab-btn-book" data-i18n="tab_book_slot">
         🎫 Book a Slot
       </button>
       <button class="dashboard-tab-btn" onclick="switchTab('bookings')" id="tab-btn-bookings">
-        📋 My Bookings
+        <span data-i18n="tab_my_bookings">📋 My Bookings</span>
         <span class="tab-badge" id="bookings-count-badge" style="display:none;"></span>
       </button>
-      <button class="dashboard-tab-btn" onclick="switchTab('track')" id="tab-btn-track">
+      <button class="dashboard-tab-btn" onclick="switchTab('track')" id="tab-btn-track" data-i18n="tab_track_progress">
         📍 Track Progress
       </button>
-      <button class="dashboard-tab-btn" onclick="switchTab('payment')" id="tab-btn-payment">
+      <button class="dashboard-tab-btn" onclick="switchTab('payment')" id="tab-btn-payment" data-i18n="tab_payment_status">
         💳 Payment Status
       </button>
-      <button class="dashboard-tab-btn" onclick="switchTab('profile')" id="tab-btn-profile">
+      <button class="dashboard-tab-btn" onclick="switchTab('profile')" id="tab-btn-profile" data-i18n="tab_my_profile">
         👤 My Profile
       </button>
     </div>
@@ -90,28 +90,28 @@
         <div class="summary-card-icon green">🎫</div>
         <div>
           <div class="summary-card-value" id="sum-total-bookings">--</div>
-          <div class="summary-card-label">Total Bookings</div>
+          <div class="summary-card-label" data-i18n="sum_total_bookings">Total Bookings</div>
         </div>
       </div>
       <div class="summary-card">
         <div class="summary-card-icon blue">⚖️</div>
         <div>
           <div class="summary-card-value" id="sum-total-qty">--</div>
-          <div class="summary-card-label">Quintals Procured</div>
+          <div class="summary-card-label" data-i18n="sum_quintals_procured">Quintals Procured</div>
         </div>
       </div>
       <div class="summary-card">
         <div class="summary-card-icon amber">💰</div>
         <div>
           <div class="summary-card-value" id="sum-total-payment">--</div>
-          <div class="summary-card-label">Total Received</div>
+          <div class="summary-card-label" data-i18n="sum_total_received">Total Received</div>
         </div>
       </div>
       <div class="summary-card">
         <div class="summary-card-icon purple">📊</div>
         <div>
           <div class="summary-card-value" id="sum-active-token">--</div>
-          <div class="summary-card-label">Active Token</div>
+          <div class="summary-card-label" data-i18n="sum_active_token">Active Token</div>
         </div>
       </div>
     </div>
@@ -124,12 +124,13 @@
         <!-- Left: Booking Form -->
         <div class="booking-form-card">
           <h3
-            style="font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            style="font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;"
+            data-i18n="book_slot_heading">
             🎫 Book Procurement Slot
           </h3>
 
           <div class="form-group">
-            <label class="form-label">🏢 Select Procurement Centre</label>
+            <label class="form-label" data-i18n="select_centre_label">🏢 Select Procurement Centre</label>
             <select id="book-centre-select" class="form-control" onchange="loadSlots()">
               {% for c in centres %}
               <option value="{{ c.id }}" data-lat="{{ c.latitude }}" data-lng="{{ c.longitude }}">
@@ -141,7 +142,7 @@
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
-              <label class="form-label">🌾 Crop / Commodity</label>
+              <label class="form-label" data-i18n="select_crop_label">🌾 Crop / Commodity</label>
               <select id="book-crop-select" class="form-control" onchange="updateMSPPreview()">
                 {% for crop in crops %}
                 <option value="{{ crop.id }}" data-msp="{{ crop.msp_rate_per_quintal }}"
@@ -152,17 +153,17 @@
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">📅 Booking Date</label>
+              <label class="form-label" data-i18n="select_date_label">📅 Booking Date</label>
               <input type="date" id="book-date-input" class="form-control" onchange="loadSlots()">
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label">
-              <span>⏰ Select Time Slot</span>
+              <span data-i18n="select_slot_label">⏰ Select Time Slot</span>
             </label>
             <div id="slots-grid-container" class="slot-grid">
-              <div style="text-align:center; padding: 1rem; color: #94a3b8; font-size: 0.85rem;">
+              <div style="text-align:center; padding: 1rem; color: #94a3b8; font-size: 0.85rem;" data-i18n="loading_slots">
                 ⏳ Loading available slots...
               </div>
             </div>
@@ -171,7 +172,7 @@
           <div class="booking-inputs-grid">
             <div class="form-group">
               <label class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
-                <span>⚖️ Quantity (Quintals)</span>
+                <span data-i18n="select_qty_label">⚖️ Quantity (Quintals)</span>
                 <span style="font-size: 0.75rem; color: #15803d; font-weight: 700;" id="preview-kg-sub">4,000 kg</span>
               </label>
               <div class="qty-stepper-row">
@@ -194,42 +195,42 @@
 
           <button id="btn-confirm-booking" class="btn btn-primary"
             style="width:100%; font-size: 1.05rem; padding: 0.95rem; min-height: 52px; margin-top: 0.5rem;"
-            onclick="confirmBooking()">
+            onclick="confirmBooking()" data-i18n="btn_confirm_booking">
             🎫 Confirm Slot & Generate Digital Token
           </button>
         </div>
 
         <!-- Right: Booking Summary -->
         <div class="booking-summary-card">
-          <div class="booking-summary-title">📋 Booking Preview</div>
+          <div class="booking-summary-title" data-i18n="preview_title">📋 Booking Preview</div>
 
           <div class="booking-summary-row">
-            <span>Centre</span>
+            <span data-i18n="preview_centre">Centre</span>
             <span id="preview-centre" style="max-width: 180px; text-align: right; font-size: 0.82rem;">—</span>
           </div>
           <div class="booking-summary-row">
-            <span>Crop</span>
+            <span data-i18n="preview_crop">Crop</span>
             <span id="preview-crop">—</span>
           </div>
           <div class="booking-summary-row">
-            <span>Date</span>
+            <span data-i18n="preview_date">Date</span>
             <span id="preview-date">—</span>
           </div>
           <div class="booking-summary-row">
-            <span>Time Slot</span>
+            <span data-i18n="preview_time_slot">Time Slot</span>
             <span id="preview-slot" style="color: #4ade80;">—</span>
           </div>
           <div class="booking-summary-row">
-            <span>Quantity</span>
+            <span data-i18n="preview_quantity">Quantity</span>
             <span id="preview-qty">—</span>
           </div>
 
           <div class="msp-highlight-box">
-            <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem;">2026 MSP RATE</div>
+            <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem;" data-i18n="msp_rate_2026">2026 MSP RATE</div>
             <div class="msp-highlight-rate" id="preview-msp">₹2,425</div>
-            <div class="msp-highlight-label">per Quintal</div>
+            <div class="msp-highlight-label" data-i18n="per_quintal">per Quintal</div>
             <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
-              <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">ESTIMATED TOTAL</div>
+              <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);" data-i18n="estimated_total">ESTIMATED TOTAL</div>
               <div style="font-size: 1.4rem; font-weight: 900; color: white; margin-top: 0.2rem;" id="preview-total">₹—
               </div>
             </div>
@@ -240,11 +241,11 @@
             <div
               style="background: linear-gradient(135deg, #4ade80, #22d3ee); border-radius: 0.75rem; padding: 1.25rem; text-align: center; color: #0f172a;">
               <div
-                style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;">
+                style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;" data-i18n="your_token_number">
                 Your Token Number</div>
               <div style="font-size: 1.6rem; font-weight: 900; font-family: monospace; letter-spacing: 0.05em;"
                 id="new-token-display"></div>
-              <div style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.7;">Show this to Mandi gate staff</div>
+              <div style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.7;" data-i18n="show_mandi_staff">Show this to Mandi gate staff</div>
             </div>
           </div>
         </div>
@@ -257,15 +258,14 @@
     <div class="dashboard-panel" id="panel-bookings">
       <div
         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
-        <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">📋 My Booking History</h3>
-        <button class="btn btn-secondary btn-sm" onclick="loadMyBookings()">🔄 Refresh</button>
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a;" data-i18n="my_bookings_title">📋 My Booking History</h3>
+        <button class="btn btn-secondary btn-sm" onclick="loadMyBookings()" data-i18n="refresh_btn">🔄 Refresh</button>
       </div>
       <div class="bookings-list" id="bookings-list-container">
         <div class="empty-state">
           <span class="empty-state-icon">🎫</span>
-          <div class="empty-state-title">No Bookings Yet</div>
-          <div class="empty-state-desc">Your confirmed slot bookings will appear here. Book your first slot to get
-            started.</div>
+          <div class="empty-state-title" data-i18n="no_bookings_title">No Bookings Yet</div>
+          <div class="empty-state-desc" data-i18n="no_bookings_desc">Your confirmed slot bookings will appear here. Book your first slot to get started.</div>
         </div>
       </div>
     </div>
@@ -278,18 +278,17 @@
 
         <div class="track-search-box">
           <div style="flex: 1; min-width: 200px;">
-            <label class="form-label">Token Number or Mobile</label>
-            <input type="text" id="track-token-input" class="form-control" placeholder="e.g. DOCA-26-P001">
+            <label class="form-label" data-i18n="track_token_mobile">Token Number or Mobile</label>
+            <input type="text" id="track-token-input" class="form-control" placeholder="e.g. DOCA-26-P001" data-i18n-placeholder="track_input_ph">
           </div>
-          <button class="btn btn-primary" onclick="trackToken()">🔍 Track Status</button>
+          <button class="btn btn-primary" onclick="trackToken()" data-i18n="btn_track_status">🔍 Track Status</button>
         </div>
 
         <div id="track-result-container">
           <div class="empty-state">
             <span class="empty-state-icon">📍</span>
-            <div class="empty-state-title">Enter Your Token to Track</div>
-            <div class="empty-state-desc">Enter your booking token number above to see real-time progress through all
-              stages</div>
+            <div class="empty-state-title" data-i18n="enter_token_prompt">Enter Your Token to Track</div>
+            <div class="empty-state-desc" data-i18n="enter_token_desc">Enter your booking token number above to see real-time progress through all stages</div>
           </div>
         </div>
 
@@ -302,15 +301,14 @@
     <div class="dashboard-panel" id="panel-payment">
       <div
         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
-        <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">💳 Payment & DBT Status</h3>
-        <button class="btn btn-secondary btn-sm" onclick="loadPaymentStatus()">🔄 Refresh</button>
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a;" data-i18n="payment_dbt_title">💳 Payment & DBT Status</h3>
+        <button class="btn btn-secondary btn-sm" onclick="loadPaymentStatus()" data-i18n="refresh_btn">🔄 Refresh</button>
       </div>
       <div id="payment-cards-container">
         <div class="empty-state">
           <span class="empty-state-icon">💳</span>
-          <div class="empty-state-title">No Payment Records Yet</div>
-          <div class="empty-state-desc">Payment details will appear here once your produce is weighed and
-            quality-checked at the Mandi</div>
+          <div class="empty-state-title" data-i18n="no_payment_title">No Payment Records Yet</div>
+          <div class="empty-state-desc" data-i18n="no_payment_desc">Payment details will appear here once your produce is weighed and quality-checked at the Mandi</div>
         </div>
       </div>
     </div>
@@ -331,43 +329,39 @@
 
         <div class="profile-fields-grid">
           <div class="profile-field">
-            <div class="field-label">📱 Mobile</div>
+            <div class="field-label" data-i18n="mobile_field">📱 Mobile</div>
             <div class="field-value" id="profile-phone">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">🪪 Aadhaar</div>
+            <div class="field-label" data-i18n="aadhaar_field">🪪 Aadhaar</div>
             <div class="field-value" id="profile-aadhaar">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">🗺 State</div>
+            <div class="field-label" data-i18n="state_field">🗺 State</div>
             <div class="field-value" id="profile-state">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">📍 District / Village</div>
+            <div class="field-label" data-i18n="district_field">📍 District / Village</div>
             <div class="field-value" id="profile-location">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">🏦 Bank Account</div>
+            <div class="field-label" data-i18n="bank_acc_field">🏦 Bank Account</div>
             <div class="field-value" id="profile-bank-acc">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">🔑 IFSC / Bank</div>
+            <div class="field-label" data-i18n="ifsc_field">🔑 IFSC / Bank</div>
             <div class="field-value" id="profile-ifsc">--</div>
           </div>
           <div class="profile-field">
-            <div class="field-label">💸 UPI ID</div>
+            <div class="field-label" data-i18n="upi_field">💸 UPI ID</div>
             <div class="field-value" id="profile-upi">--</div>
           </div>
-          <!-- <div class="profile-field" style="grid-column: 1/-1;">
-            <div class="field-label">📁 Verification Document (Supabase Storage)</div>
-            <div class="field-value" id="profile-doc-link">--</div>
-          </div> -->
         </div>
 
         <div
           style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #f1f5f9; display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="/farmer/login" class="btn btn-secondary btn-sm" onclick="logoutFarmer(event)"
-            style="display:inline-flex;align-items:center;gap:0.4rem;">
+            style="display:inline-flex;align-items:center;gap:0.4rem;" data-i18n="nav_logout">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
               class="logout-icon">

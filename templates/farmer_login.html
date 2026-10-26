@@ -53,9 +53,9 @@
 {% endblock %}
 
 {% block nav_links %}
-<a href="/" class="btn-nav-link inactive">🏠 Home</a>
-<a href="/farmer/login" class="btn-nav-link active">👨‍🌾 Farmer Login</a>
-<a href="/admin/login" class="btn-nav-link inactive">🏢 Admin</a>
+<a href="/" class="btn-nav-link inactive" data-i18n="nav_home">🏠 Home</a>
+<a href="/farmer/login" class="btn-nav-link active" data-i18n="nav_farmer">👨‍🌾 Farmer Login</a>
+<a href="/admin/login" class="btn-nav-link inactive" data-i18n="nav_admin">🏢 Admin Panel</a>
 {% endblock %}
 
 {% block sms_button %}{% endblock %}
@@ -74,26 +74,26 @@
       <div class="otp-step" id="login-step-1">
         <div class="auth-card-header">
           <span class="auth-card-icon">👨‍🌾</span>
-          <div class="auth-card-title">Farmer Login</div>
-          <div class="auth-card-subtitle">Login with your registered mobile number or Supabase Auth</div>
+          <div class="auth-card-title" data-i18n="farmer_login_header">Farmer Login</div>
+          <div class="auth-card-subtitle" data-i18n="farmer_login_sub">Login with your registered mobile number or Supabase Auth</div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Mobile Number</label>
+          <label class="form-label" data-i18n="mobile_label">Mobile Number</label>
           <div class="otp-input-group">
             <span class="country-code">+91</span>
-            <input type="tel" id="login-phone" class="form-control" placeholder="9876543210"
+            <input type="tel" id="login-phone" class="form-control" placeholder="9876543210" data-i18n-placeholder="phone_placeholder"
                    maxlength="10" inputmode="numeric" autocomplete="tel">
           </div>
         </div>
 
-        <button class="btn btn-primary" style="width:100%; margin-top: 0.5rem;" id="btn-send-otp-login" onclick="sendLoginOTP()">
+        <button class="btn btn-primary" style="width:100%; margin-top: 0.5rem;" id="btn-send-otp-login" onclick="sendLoginOTP()" data-i18n="btn_send_otp">
           📲 Send OTP / Verify
         </button>
 
         <!-- SIH Presentation 1-Click Demo Logins -->
         <div class="quick-demo-box">
-          <div class="quick-demo-title">⚡ SIH 1-Click Fast Login (Pre-configured)</div>
+          <div class="quick-demo-title" data-i18n="sih_demo_login_title">⚡ SIH 1-Click Fast Login (Pre-configured)</div>
           <div class="demo-btn-group">
             <button type="button" class="btn-demo-account" onclick="quickLogin('9876543210', 'farmer1@smartprocure.in', 'farmer123')">
               <span>🌾 <strong>Ram Lal Verma</strong> (Karnal, Wheat)</span>

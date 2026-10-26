@@ -39,9 +39,9 @@
 {% endblock %}
 
 {% block nav_links %}
-<a href="/" class="btn-nav-link inactive">🏠 Home</a>
-<a href="/farmer/login" class="btn-nav-link inactive">👨‍🌾 Farmer</a>
-<a href="/admin/login" class="btn-nav-link active">🏢 Admin Login</a>
+<a href="/" class="btn-nav-link inactive" data-i18n="nav_home">🏠 Home</a>
+<a href="/farmer/login" class="btn-nav-link inactive" data-i18n="nav_farmer">👨‍🌾 Farmer Portal</a>
+<a href="/admin/login" class="btn-nav-link active" data-i18n="nav_admin">🏢 Admin Panel</a>
 {% endblock %}
 
 {% block sms_button %}{% endblock %}
@@ -59,21 +59,21 @@
       <div class="auth-card-header">
         <span class="admin-badge">🔒 Supabase Auth • Role Protected</span>
         <span class="auth-card-icon">🏢</span>
-        <div class="auth-card-title">Operator Login</div>
-        <div class="auth-card-subtitle">
+        <div class="auth-card-title" data-i18n="admin_login_header">Operator Login</div>
+        <div class="auth-card-subtitle" data-i18n="admin_login_sub">
           Sign in with your DoCA-issued operator credentials or Supabase Auth to manage queues and weighbridges
         </div>
       </div>
 
       <form id="admin-login-form" onsubmit="submitAdminLogin(event)">
         <div class="form-group">
-          <label class="form-label">Username / Email</label>
+          <label class="form-label" data-i18n="email_label">Username / Email</label>
           <input type="text" id="admin-username" class="form-control" placeholder="e.g. karnal_op"
                  value="karnal_op" autocomplete="username" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Password</label>
+          <label class="form-label" data-i18n="password_label">Password</label>
           <div class="password-wrapper">
             <input type="password" id="admin-password" class="form-control" placeholder="••••••••"
                    value="op@karnal" autocomplete="current-password" required>
@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem; background: linear-gradient(135deg, #1d4ed8, #3b82f6);" id="btn-admin-login">
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem; background: linear-gradient(135deg, #1d4ed8, #3b82f6);" id="btn-admin-login" data-i18n="btn_admin_login">
           🔐 Login to Admin Panel
         </button>
       </form>

@@ -35,6 +35,7 @@ const I18N = {
     msp_tag: "📊 Government Approved",
     msp_title: "2026-27 Minimum Support Prices (MSP)",
     msp_desc: "Officially notified MSP rates for Kharif & Rabi crops as per Cabinet Committee on Economic Affairs (CCEA)",
+    per_quintal: "per Quintal (100 kg)",
     btn_show_all_crops: "Show All",
     btn_show_less_crops: "Show Less",
 
@@ -98,6 +99,184 @@ const I18N = {
     btn_register_farmer: "✍️ Register as Farmer",
     btn_already_login: "🔐 Already Registered? Login",
 
+    // Auth Pages (Login & Signup)
+    farmer_login_header: "Farmer Login",
+    farmer_login_sub: "Login with your registered mobile number or Supabase Auth",
+    admin_login_header: "Admin / Operator Login",
+    admin_login_sub: "Centre Operator & Admin Portal • Restricted Access",
+    mobile_label: "Mobile Number",
+    phone_placeholder: "9876543210",
+    btn_send_otp: "📲 Send OTP / Verify",
+    sih_demo_login_title: "⚡ SIH 1-Click Fast Login (Pre-configured)",
+    reg_farmer_header: "Register as Farmer",
+    personal_details_sec: "👤 Personal Details",
+    full_name_label: "Full Name *",
+    full_name_ph: "Full Name",
+    aadhaar_label: "Aadhaar Number (12 Digits) *",
+    aadhaar_ph: "12-digit Aadhaar Number",
+    state_label: "State / UT *",
+    district_label: "District *",
+    district_ph: "District",
+    village_label: "Village / Tehsil *",
+    village_ph: "Village / Tehsil",
+    bank_details_sec: "🏦 Bank & Payment Details (for DBT MSP Payout)",
+    bank_name_label: "Bank Name *",
+    bank_name_ph: "e.g. State Bank of India",
+    account_num_label: "Account Number *",
+    account_num_ph: "Bank Account Number",
+    ifsc_label: "IFSC Code *",
+    ifsc_ph: "e.g. SBIN0001234",
+    kisan_id_label: "Kisan ID / PM-KISAN No. (Optional)",
+    kisan_id_ph: "Optional PM-Kisan ID",
+    btn_submit_reg: "✍️ Complete Registration & Get Kisan ID",
+
+    // Farmer Dashboard Tabs & Content
+    tab_book_slot: "🎫 Book a Slot",
+    tab_my_bookings: "📋 My Bookings",
+    tab_track_progress: "📍 Track Progress",
+    tab_payment_status: "💳 Payment Status",
+    tab_my_profile: "👤 My Profile",
+
+    sum_total_bookings: "Total Bookings",
+    sum_quintals_procured: "Quintals Procured",
+    sum_total_received: "Total Received",
+    sum_active_token: "Active Token",
+
+    book_slot_heading: "🎫 Book Procurement Slot",
+    select_centre_label: "🏢 Select Procurement Centre",
+    select_crop_label: "🌾 Crop / Commodity",
+    select_date_label: "📅 Booking Date",
+    select_slot_label: "⏰ Select Time Slot",
+    loading_slots: "⏳ Loading available slots...",
+    select_qty_label: "⚖️ Quantity (Quintals)",
+    btn_confirm_booking: "🎫 Confirm Slot & Generate Digital Token",
+
+    preview_title: "📋 Booking Preview",
+    preview_centre: "Centre",
+    preview_crop: "Crop",
+    preview_date: "Date",
+    preview_time_slot: "Time Slot",
+    preview_quantity: "Quantity",
+    msp_rate_2026: "2026 MSP RATE",
+    estimated_total: "ESTIMATED TOTAL",
+    your_token_number: "YOUR TOKEN NUMBER",
+    show_mandi_staff: "Show this to Mandi gate staff",
+
+    my_bookings_title: "📋 My Booking History",
+    refresh_btn: "🔄 Refresh",
+    no_bookings_title: "No Bookings Yet",
+    no_bookings_desc: "Your confirmed slot bookings will appear here. Book your first slot to get started.",
+
+    track_token_mobile: "Token Number or Mobile",
+    track_input_ph: "e.g. DOCA-26-P001",
+    btn_track_status: "🔍 Track Status",
+    enter_token_prompt: "Enter Your Token to Track",
+    enter_token_desc: "Enter your booking token number above to see real-time progress through all stages",
+
+    payment_dbt_title: "💳 Payment & DBT Status",
+    no_payment_title: "No Payment Records Yet",
+    no_payment_desc: "Payment details will appear here once your produce is weighed and quality-checked at the Mandi",
+
+    profile_heading: "👤 Farmer Official Profile",
+    mobile_field: "📱 Mobile",
+    aadhaar_field: "🪪 Aadhaar",
+    state_field: "🗺 State",
+    district_field: "📍 District / Village",
+    bank_acc_field: "🏦 Bank Account",
+    ifsc_field: "🔑 IFSC / Bank",
+    upi_field: "💸 UPI ID",
+
+    // Admin Dashboard Tabs & Content
+    admin_title: "Centre Operator Dashboard",
+    active_mandi_label: "Active Mandi:",
+    admin_tab_ops: "⚡ Live Operations",
+    admin_tab_queue: "👥 Queue Management",
+    admin_tab_weigh: "⚖️ Weighbridge",
+    admin_tab_status: "📝 Update Status",
+    admin_tab_dbt: "💰 DBT Settlements",
+    admin_tab_analytics: "📊 Analytics",
+
+    admin_stat_farmers: "Registered Farmers",
+    admin_stat_tokens: "Scheduled Tokens",
+    admin_stat_procured: "Total Procured (Qtl)",
+    admin_stat_payouts: "Payouts Disbursed",
+
+    desks_heading: "Counter Desks & Live Operator Bays",
+    desks_sub: "Active Mandi inspection lines and weighbridges",
+    btn_call_next_farmer: "📢 Call Next Waiting Farmer",
+    live_queue_heading: "Live Waiting Queue",
+    auto_syncing: "Auto-Syncing",
+
+    th_token: "Token #",
+    th_farmer: "Farmer",
+    th_crop: "Crop",
+    th_slot: "Slot",
+    th_status: "Status",
+    th_desk: "Queue / Desk",
+    th_actions: "Actions",
+    th_qty: "Est. Qty",
+    th_checkin: "Check-In",
+    th_net_qty: "Net Quantity",
+    th_total_amt: "Total Amount",
+    th_payment_action: "Payment Status & Action",
+
+    weighbridge_heading: "Digital Weighbridge & Quality Station",
+    select_token_prompt: "Select a token from Queue Management tab",
+    none_selected: "None Selected",
+    scale_net_wt: "DIGITAL WEIGHBRIDGE NET WEIGHT",
+    stable_scale: "STABLE SCALE",
+    gross_wt_label: "Gross Vehicle Weight (kg)",
+    tare_wt_label: "Tare / Empty Weight (kg)",
+    moisture_pct_label: "Moisture Content (%)",
+    quality_grade_label: "Quality Assessment Grade",
+    agronomist_notes_label: "Agronomist / Officer Remarks",
+    net_produce_qty: "Net Produce Quantity:",
+    base_msp_rate: "Base 2026 MSP Rate:",
+    grade_bonus: "Grade Bonus / Moisture Penalty:",
+    effective_rate_label: "Effective Rate / Quintal:",
+    total_payable_farmer: "Total Payable to Farmer:",
+    btn_record_procurement: "⚖️ Record Procurement & Issue Digital J-Form Receipt",
+    select_token_weigh: "🔍 Select Token for Weighment",
+    btn_load_token_details: "📋 Load Token Details",
+
+    update_status_heading: "📝 Update Farmer Booking Status",
+    update_status_sub: "Manually update the status of a booking at any stage of the procurement process",
+    token_or_id_label: "Token Number or Booking ID",
+    btn_lookup_booking: "🔍 Lookup Booking",
+    notes_remarks_label: "Notes / Remarks (Optional)",
+    btn_apply_status: "💾 Apply Status Update",
+
+    dbt_settlements_heading: "Today's Completed Procurements & DBT Settlements",
+    pfms_sync: "Real-time PFMS Sync",
+
+    analytics_crop_chart: "📊 Procurement by Crop (Today)",
+    analytics_payment_chart: "💰 Payment Status Breakdown",
+    analytics_kpi_title: "📈 System KPI Metrics",
+
+    // Live Queue TV Display (display.html)
+    display_heading: "Public TV Live Queue Display",
+    active_counters_heading: "Active Counter Desks • Currently Serving",
+    live_broadcast: "LIVE BROADCAST",
+    next_in_queue_label: "Next in Queue:",
+    no_tokens_waiting: "No tokens waiting in queue",
+
+    // Receipt (receipt.html)
+    gov_receipt_hdr: "GOVERNMENT OF INDIA • DEPARTMENT OF CONSUMER AFFAIRS",
+    receipt_main_title: "OFFICIAL PROCUREMENT RECEIPT (J-FORM)",
+    return_farmer_portal: "← Return to Farmer Portal",
+    share_whatsapp: "📲 Share on WhatsApp",
+    print_official_jform: "🖨️ Print Official J-Form",
+
+    // Common Status Values
+    status_booked: "BOOKED",
+    status_checked_in: "CHECKED IN",
+    status_called: "CALLED TO COUNTER",
+    status_completed: "PROCURED & PAID",
+    status_cancelled: "CANCELLED",
+    status_transferred: "TRANSFERRED TO BANK",
+    status_processing: "PROCESSING",
+    status_pending: "PENDING",
+
     network_offline: "Spotty connection: Working in resilient offline mode.",
     network_online: "Connected: Mandi gateway online & synchronized.",
     step_register: "Register",
@@ -155,6 +334,7 @@ const I18N = {
     msp_tag: "📊 सरकार द्वारा स्वीकृत",
     msp_title: "2026-27 न्यूनतम समर्थन मूल्य (MSP)",
     msp_desc: "आर्थिक मामलों की कैबिनेट समिति (CCEA) द्वारा अधिसूचित आधिकारिक फसल दरें",
+    per_quintal: "प्रति क्विंटल (100 किग्रा)",
     btn_show_all_crops: "सभी दिखाएं",
     btn_show_less_crops: "कम दिखाएं",
 
@@ -167,7 +347,7 @@ const I18N = {
     btn_use_location: "📍 मेरा स्थान प्रयोग करें",
     btn_search: "🔍 खोजें",
 
-    // Track Progress Section (Hindi)
+    // Track Progress Section
     track_tag: "📍 लाइव कतार स्थिति",
     track_title: "खरीद और कतार स्थिति ट्रैक करें",
     track_desc: "बिना लॉगिन किए अपनी वास्तविक समय स्थिति और प्रतीक्षा समय जांचने के लिए अपना टोकन नंबर (उदा. DOCA-26-P001) दर्ज करें।",
@@ -177,7 +357,7 @@ const I18N = {
     track_empty_title: "अपनी मंडी कतार स्थिति लाइव जांचें",
     track_empty_desc: "सभी चरणों में वास्तविक समय की प्रगति देखने के लिए ऊपर अपना डिजिटल टोकन नंबर दर्ज करें।",
 
-    // How It Works Section (Hindi Vernacular - Easy for Farmer)
+    // How It Works Section
     how_tag: "⚡ सरल 6-चरण प्रक्रिया",
     how_title: "स्मार्टप्रोक्योर से फसल बेचना है बहुत आसान",
     how_desc: "रजिस्ट्रेशन से लेकर खाते में पैसे आने तक 6 आसान चरणों में — बिना कागजी कार्रवाई, बिना लंबी लाइन",
@@ -218,6 +398,184 @@ const I18N = {
     btn_register_farmer: "✍️ किसान पंजीकरण करें",
     btn_already_login: "🔐 पहले से पंजीकृत? लॉगिन करें",
 
+    // Auth Pages (Login & Signup)
+    farmer_login_header: "किसान लॉगिन",
+    farmer_login_sub: "अपने पंजीकृत मोबाइल नंबर या ओटीपी से लॉगिन करें",
+    admin_login_header: "ऑपरेटर / एडमिन लॉगिन",
+    admin_login_sub: "सरकारी खरीद केंद्र ऑपरेटरों व अधिकारियों के लिए",
+    mobile_label: "मोबाइल नंबर",
+    phone_placeholder: "9876543210",
+    btn_send_otp: "📲 ओटीपी भेजें / सत्यापित करें",
+    sih_demo_login_title: "⚡ SIH 1-क्लिक त्वरित लॉगिन (पूर्वनिर्धारित)",
+    reg_farmer_header: "किसान पंजीकरण",
+    personal_details_sec: "👤 व्यक्तिगत जानकारी",
+    full_name_label: "पूरा नाम *",
+    full_name_ph: "पूरा नाम",
+    aadhaar_label: "आधार नंबर (12 अंक) *",
+    aadhaar_ph: "12 अंकों का आधार नंबर",
+    state_label: "राज्य / केंद्र शासित प्रदेश *",
+    district_label: "जिला *",
+    district_ph: "जिला",
+    village_label: "गांव / तहसील *",
+    village_ph: "गांव / तहसील",
+    bank_details_sec: "🏦 बैंक व भुगतान विवरण (DBT एमएसपी भुगतान के लिए)",
+    bank_name_label: "बैंक का नाम *",
+    bank_name_ph: "उदा. स्टेट बैंक ऑफ इंडिया",
+    account_num_label: "खाता संख्या *",
+    account_num_ph: "बैंक खाता संख्या",
+    ifsc_label: "आईएफएससी कोड *",
+    ifsc_ph: "उदा. SBIN0001234",
+    kisan_id_label: "किसान आईडी / पीएम-किसान सं (वैकल्पिक)",
+    kisan_id_ph: "वैकल्पिक पीएम-किसान आईडी",
+    btn_submit_reg: "✍️ पंजीकरण पूरा करें व किसान आईडी प्राप्त करें",
+
+    // Farmer Dashboard Tabs & Content
+    tab_book_slot: "🎫 स्लॉट बुक करें",
+    tab_my_bookings: "📋 मेरी बुकिंग्स",
+    tab_track_progress: "📍 लाइव स्थिति ट्रैक करें",
+    tab_payment_status: "💳 भुगतान स्थिति (DBT)",
+    tab_my_profile: "👤 मेरी प्रोफाइल",
+
+    sum_total_bookings: "कुल बुकिंग्स",
+    sum_quintals_procured: "खरीदी गई फसल (क्विंटल)",
+    sum_total_received: "कुल प्राप्त राशि",
+    sum_active_token: "सक्रिय टोकन",
+
+    book_slot_heading: "🎫 खरीद स्लॉट बुक करें",
+    select_centre_label: "🏢 सरकारी खरीद केंद्र चुनें",
+    select_crop_label: "🌾 फसल चुनें",
+    select_date_label: "📅 तिथि चुनें",
+    select_slot_label: "⏰ समय स्लॉट चुनें",
+    loading_slots: "⏳ उपलब्ध स्लॉट लोड हो रहे हैं...",
+    select_qty_label: "⚖️ मात्रा (क्विंटल)",
+    btn_confirm_booking: "🎫 स्लॉट बुक करें व टोकन जनरेट करें",
+
+    preview_title: "📋 बुकिंग पूर्वावलोकन",
+    preview_centre: "खरीद केंद्र",
+    preview_crop: "फसल",
+    preview_date: "तिथि",
+    preview_time_slot: "समय स्लॉट",
+    preview_quantity: "मात्रा",
+    msp_rate_2026: "2026 एमएसपी दर",
+    estimated_total: "अनुमानित कुल राशि",
+    your_token_number: "आपका टोकन नंबर",
+    show_mandi_staff: "मंडी प्रवेश द्वार कर्मचारी को यह टोकन दिखाएं",
+
+    my_bookings_title: "📋 मेरी बुकिंग्स इतिहास",
+    refresh_btn: "🔄 रिफ्रेश करें",
+    no_bookings_title: "कोई बुकिंग उपलब्ध नहीं",
+    no_bookings_desc: "आपकी बुक की गई स्लॉट यहां दिखेंगी। अपनी पहली स्लॉट बुक करें।",
+
+    track_token_mobile: "टोकन नंबर या मोबाइल",
+    track_input_ph: "उदा. DOCA-26-P001",
+    btn_track_status: "🔍 स्थिति देखें",
+    enter_token_prompt: "स्थिति देखने के लिए टोकन नंबर दर्ज करें",
+    enter_token_desc: "अपनी वास्तविक समय प्रगति देखने के लिए ऊपर टोकन नंबर दर्ज करें",
+
+    payment_dbt_title: "💳 सीधा बैंक हस्तांतरण (DBT) स्थिति",
+    no_payment_title: "कोई भुगतान रिकॉर्ड नहीं",
+    no_payment_desc: "मंडी में आपकी फसल की तौल और गुणवत्ता जांच पूरी होने पर भुगतान विवरण यहां दिखेगा",
+
+    profile_heading: "👤 किसान आधिकारिक प्रोफाइल",
+    mobile_field: "📱 मोबाइल नंबर",
+    aadhaar_field: "🪪 आधार नंबर",
+    state_field: "🗺 राज्य",
+    district_field: "📍 जिला / गांव",
+    bank_acc_field: "🏦 बैंक खाता",
+    ifsc_field: "🔑 आईएफएससी कोड",
+    upi_field: "💸 यूपीआई आईडी",
+
+    // Admin Dashboard Tabs & Content
+    admin_title: "मंडी ऑपरेटर व अधिकारी डैशबोर्ड",
+    active_mandi_label: "सक्रिय मंडी:",
+    admin_tab_ops: "⚡ लाइव ऑपरेशन्स",
+    admin_tab_queue: "👥 कतार प्रबंधन",
+    admin_tab_weigh: "⚖️ धर्म कांटा (तौल)",
+    admin_tab_status: "📝 स्थिति अपडेट",
+    admin_tab_dbt: "💰 DBT भुगतान",
+    admin_tab_analytics: "📊 विश्लेषिकी व रिपोर्ट",
+
+    admin_stat_farmers: "पंजीकृत किसान",
+    admin_stat_tokens: "अनुसूचित टोकन",
+    admin_stat_procured: "कुल खरीद (क्विंटल)",
+    admin_stat_payouts: "कुल जारी DBT राशि",
+
+    desks_heading: "काउंटर डेस्क व ऑपरेटर स्टेशन",
+    desks_sub: "सक्रिय मंडी निरीक्षण एवं धर्म कांटा लाइनें",
+    btn_call_next_farmer: "📢 अगला किसान बुलाएं",
+    live_queue_heading: "लाइव प्रतीक्षारत कतार",
+    auto_syncing: "ऑटो-सिंक सक्रिय",
+
+    th_token: "टोकन सं.",
+    th_farmer: "किसान",
+    th_crop: "फसल",
+    th_slot: "समय स्लॉट",
+    th_status: "स्थिति",
+    th_desk: "कतार / काउंटर",
+    th_actions: "कार्रवाई",
+    th_qty: "अनुमानित मात्रा",
+    th_checkin: "चेक-इन समय",
+    th_net_qty: "शुद्ध मात्रा",
+    th_total_amt: "कुल देय राशि",
+    th_payment_action: "भुगतान स्थिति व कार्रवाई",
+
+    weighbridge_heading: "डिजिटल धर्म कांटा व गुणवत्ता स्टेशन",
+    select_token_prompt: "कतार प्रबंधन टैब से टोकन चुनें",
+    none_selected: "कोई टोकन चयनित नहीं",
+    scale_net_wt: "डिजिटल कांटा शुद्ध वजन",
+    stable_scale: "कांटा स्थिर है",
+    gross_wt_label: "सकल वाहन वजन (किग्रा)",
+    tare_wt_label: "खाली वाहन वजन (किग्रा)",
+    moisture_pct_label: "नमी प्रतिशत (%)",
+    quality_grade_label: "गुणवत्ता ग्रेड",
+    agronomist_notes_label: "अधिकारी / निरीक्षक टिप्पणी",
+    net_produce_qty: "शुद्ध उपज मात्रा:",
+    base_msp_rate: "आधार 2026 एमएसपी दर:",
+    grade_bonus: "ग्रेड बोनस / नमी समायोजन:",
+    effective_rate_label: "प्रभावी दर / क्विंटल:",
+    total_payable_farmer: "किसान को कुल देय राशि:",
+    btn_record_procurement: "⚖️ खरीद दर्ज करें व डिजिटल जे-फॉर्म रसीद जारी करें",
+    select_token_weigh: "🔍 तौल हेतु टोकन चुनें",
+    btn_load_token_details: "📋 टोकन विवरण लोड करें",
+
+    update_status_heading: "📝 किसान बुकिंग स्थिति अपडेट करें",
+    update_status_sub: "खरीद प्रक्रिया के किसी भी चरण में बुकिंग स्थिति अपडेट करें",
+    token_or_id_label: "टोकन नंबर या बुकिंग आईडी",
+    btn_lookup_booking: "🔍 बुकिंग खोजें",
+    notes_remarks_label: "टिप्पणी / रिमार्क्स (वैकल्पिक)",
+    btn_apply_status: "💾 स्थिति अपडेट लागू करें",
+
+    dbt_settlements_heading: "आज की पूर्ण खरीद व DBT बैंक भुगतान",
+    pfms_sync: "वास्तविक समय PFMS सिंक",
+
+    analytics_crop_chart: "📊 फसल अनुसार खरीद (आज)",
+    analytics_payment_chart: "💰 भुगतान स्थिति विभाजन",
+    analytics_kpi_title: "📈 मुख्य प्रदर्शन संकेतक (KPI)",
+
+    // Live Queue TV Display (display.html)
+    display_heading: "सार्वजनिक टीवी लाइव कतार प्रदर्शन",
+    active_counters_heading: "सक्रिय काउंटर • वर्तमान सेवारत किसान",
+    live_broadcast: "लाइव प्रसारण",
+    next_in_queue_label: "कतार में अगले किसान:",
+    no_tokens_waiting: "कतार में कोई टोकन प्रतीक्षारत नहीं है",
+
+    // Receipt (receipt.html)
+    gov_receipt_hdr: "भारत सरकार • उपभोक्ता मामले विभाग",
+    receipt_main_title: "आधिकारिक मंडी खरीद रसीद (जे-फॉर्म)",
+    return_farmer_portal: "← किसान पोर्टल पर वापस जाएं",
+    share_whatsapp: "📲 व्हाट्सएप पर शेयर करें",
+    print_official_jform: "🖨️ जे-फॉर्म प्रिंट करें",
+
+    // Common Status Values
+    status_booked: "बुक्ड",
+    status_checked_in: "चेक-इन पूर्ण",
+    status_called: "काउंटर पर बुलाया गया",
+    status_completed: "खरीद व भुगतान पूर्ण",
+    status_cancelled: "रद्द",
+    status_transferred: "बैंक में अंतरित (DBT)",
+    status_processing: "प्रक्रियाधीन",
+    status_pending: "लंबित",
+
     network_offline: "ऑफ़लाइन मोड: नेटवर्क कमजोर है। विवरण सुरक्षित है।",
     network_online: "ऑनलाइन वापस: मंडी सर्वर कनेक्ट हो गया।",
     step_register: "पंजीकरण",
@@ -248,6 +606,18 @@ const I18N = {
 
 let currentLang = localStorage.getItem('smartprocure_lang') || 'en';
 
+function t(key, fallbackText = '') {
+  const lang = (typeof currentLang !== 'undefined') ? currentLang : (localStorage.getItem('smartprocure_lang') || 'en');
+  if (I18N[lang] && I18N[lang][key] !== undefined) {
+    return I18N[lang][key];
+  }
+  if (I18N['en'] && I18N['en'][key] !== undefined) {
+    return I18N['en'][key];
+  }
+  return fallbackText || key;
+}
+window.t = t;
+
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('smartprocure_lang', lang);
@@ -255,15 +625,22 @@ function setLanguage(lang) {
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (I18N[lang] && I18N[lang][key]) {
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
       el.innerHTML = I18N[lang][key];
     }
   });
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (I18N[lang] && I18N[lang][key]) {
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
       el.placeholder = I18N[lang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (I18N[lang] && I18N[lang][key] !== undefined) {
+      el.title = I18N[lang][key];
     }
   });
 

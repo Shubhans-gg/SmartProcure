@@ -26,6 +26,10 @@ const DisplayApp = {
       this.fetchDisplayQueue();
     });
 
+    window.addEventListener('languageChanged', () => {
+      this.fetchDisplayQueue();
+    });
+
     if (window.supabaseClient) {
       try {
         window.supabaseClient.channel('display-realtime')
@@ -72,16 +76,16 @@ const DisplayApp = {
       return `
         <div class="display-counter-card ${hasToken ? 'serving-flash' : 'idle'}">
           <div class="counter-badge-header">
-            <span class="counter-num-tag">COUNTER ${desk.desk_number}</span>
+            <span class="counter-num-tag">${(typeof currentLang !== 'undefined' && currentLang === 'hi') ? 'काउंटर' : 'COUNTER'} ${desk.desk_number}</span>
             <span class="counter-desk-type">${desk.desk_type.replace('_', ' ')}</span>
           </div>
 
           <div class="counter-token-giant">
-            ${desk.current_token || '<span style="color: #64748b; font-size: 2.2rem;">IDLE</span>'}
+            ${desk.current_token || `<span style="color: #64748b; font-size: 2.2rem;">${(typeof currentLang !== 'undefined' && currentLang === 'hi') ? 'खाली' : 'IDLE'}</span>`}
           </div>
 
           <div class="counter-farmer-name">
-            ${desk.farmer_name ? `👨‍🌾 ${desk.farmer_name}` : 'Ready for next token'}
+            ${desk.farmer_name ? `👨‍🌾 ${desk.farmer_name}` : ((typeof currentLang !== 'undefined' && currentLang === 'hi') ? 'अगले किसान के लिए तैयार' : 'Ready for next token')}
           </div>
         </div>
       `;
@@ -95,7 +99,7 @@ const DisplayApp = {
     const waiting = queue.filter(q => q.booking_status === 'checked_in');
 
     if (waiting.length === 0) {
-      ticker.innerHTML = '<span style="color: #94a3b8;">No tokens waiting in queue</span>';
+      ticker.innerHTML = `<span style="color: #94a3b8;">${t('no_tokens_waiting', 'No tokens waiting in queue')}</span>`;
       return;
     }
 
