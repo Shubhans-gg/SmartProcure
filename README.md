@@ -5,7 +5,6 @@
 ### Digital Procurement Queue & Status Platform
 
 **Smart India Hackathon 2026 · Problem Statement 26032 · Team Yuva Codes**
-*Ministry of Consumer Affairs, Food & Public Distribution — Department of Consumer Affairs (DoCA)*
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-smartprocure--beryl.vercel.app-black?logo=vercel)](https://smartprocure-beryl.vercel.app)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
